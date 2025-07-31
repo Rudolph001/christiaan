@@ -10,33 +10,32 @@ import { marketAnalyzer } from "./services/market-analyzer";
 export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);
 
-  // WebSocket setup for real-time updates
-  const wss = new WebSocketServer({ server: httpServer, path: '/ws' });
+  // WebSocket setup temporarily disabled to resolve connection issues
+  // TODO: Re-enable WebSocket for real-time updates
+  // const wss = new WebSocketServer({ server: httpServer, path: '/ws' });
   
-  wss.on('connection', (ws: WebSocket) => {
-    console.log('Client connected to WebSocket');
+  // wss.on('connection', (ws: WebSocket) => {
+  //   console.log('Client connected to WebSocket');
     
-    ws.on('message', (message: string) => {
-      try {
-        const data = JSON.parse(message);
-        console.log('Received WebSocket message:', data);
-      } catch (error) {
-        console.error('Invalid WebSocket message:', error);
-      }
-    });
+  //   ws.on('message', (message: string) => {
+  //     try {
+  //       const data = JSON.parse(message);
+  //       console.log('Received WebSocket message:', data);
+  //     } catch (error) {
+  //       console.error('Invalid WebSocket message:', error);
+  //     }
+  //   });
 
-    ws.on('close', () => {
-      console.log('Client disconnected from WebSocket');
-    });
-  });
+  //   ws.on('close', () => {
+  //     console.log('Client disconnected from WebSocket');
+  //   });
+  // });
 
-  // Broadcast function for real-time updates
+  // Broadcast function temporarily disabled (WebSocket disabled)
+  // TODO: Re-enable when WebSocket is restored
   const broadcast = (data: any) => {
-    wss.clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(JSON.stringify(data));
-      }
-    });
+    // WebSocket broadcasting disabled
+    console.log('Broadcast skipped (WebSocket disabled):', data.type);
   };
 
   // Trading session routes
