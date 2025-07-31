@@ -1,0 +1,206 @@
+# AI Trading Assistant - System Requirements
+
+## Software Requirements
+
+### Required Software
+
+1. **Node.js (Required)**
+   - Version: 18.0.0 or higher (LTS recommended)
+   - Download: https://nodejs.org/
+   - Purpose: JavaScript runtime for the application
+   - Installation: Choose "Add to PATH" during setup
+
+2. **PostgreSQL (Required)**
+   - Version: 13.0 or higher
+   - Download: https://www.postgresql.org/download/windows/
+   - Purpose: Database for storing trading data
+   - Installation: Remember the superuser password
+
+3. **Git (Optional)**
+   - Version: Latest
+   - Download: https://git-scm.com/download/win
+   - Purpose: Version control and updates
+
+### NPM Dependencies (Auto-installed)
+
+The following packages will be automatically installed:
+
+#### Core Framework
+- express: Web server framework
+- tsx: TypeScript execution
+- vite: Frontend build tool
+- typescript: TypeScript compiler
+
+#### Database & ORM
+- drizzle-orm: Database ORM
+- drizzle-kit: Database migrations
+- @neondatabase/serverless: PostgreSQL driver
+- drizzle-zod: Schema validation
+
+#### UI Components
+- react: Frontend framework
+- @radix-ui/*: UI component library
+- tailwindcss: CSS framework
+- lucide-react: Icons
+
+#### State Management
+- @tanstack/react-query: Server state management
+- wouter: Routing
+
+#### Forms & Validation
+- react-hook-form: Form handling
+- zod: Schema validation
+- @hookform/resolvers: Form validation
+
+#### Charts & Visualization
+- recharts: Chart library
+- framer-motion: Animations
+
+## Hardware Requirements
+
+### Minimum Requirements
+- **Operating System**: Windows 10 (64-bit) or Windows 11
+- **Processor**: Intel i3 or AMD equivalent (2 cores)
+- **Memory**: 4 GB RAM
+- **Storage**: 1 GB free disk space
+- **Network**: Internet connection for initial setup
+
+### Recommended Requirements
+- **Operating System**: Windows 11 (64-bit)
+- **Processor**: Intel i5 or AMD equivalent (4+ cores)
+- **Memory**: 8 GB RAM or more
+- **Storage**: 2 GB free disk space (SSD recommended)
+- **Network**: Stable internet connection
+
+### Optimal Performance
+- **Processor**: Intel i7/i9 or AMD Ryzen 7/9
+- **Memory**: 16 GB RAM or more
+- **Storage**: SSD with 5+ GB free space
+- **Network**: High-speed internet
+
+## Network Requirements
+
+### Ports Used
+- **5000**: Default application port (configurable)
+- **5432**: PostgreSQL default port
+
+### Firewall Configuration
+- Allow Node.js through Windows Firewall
+- Allow PostgreSQL through Windows Firewall
+- No external network access required for basic operation
+
+### Internet Requirements
+- Required for initial setup and npm package installation
+- Optional for Discord integration
+- Optional for future market data integration
+
+## Browser Requirements
+
+### Supported Browsers
+- **Chrome**: Version 90+ (Recommended)
+- **Firefox**: Version 88+
+- **Edge**: Version 90+
+- **Safari**: Version 14+ (if available on Windows)
+
+### Browser Features Required
+- JavaScript enabled
+- WebSocket support
+- Local storage support
+- Modern CSS support
+
+## Performance Considerations
+
+### Database Performance
+- Regular PostgreSQL maintenance recommended
+- Monitor database size growth
+- Consider periodic data archival
+
+### Application Performance
+- Close unnecessary applications during trading
+- Monitor CPU and memory usage
+- Use production mode for better performance
+
+### Storage Considerations
+- Database grows with trading activity
+- Log files accumulate over time
+- Consider regular cleanup of temporary files
+
+## Security Requirements
+
+### System Security
+- Windows Defender or equivalent antivirus
+- Regular Windows updates
+- Firewall enabled
+
+### Application Security
+- Strong PostgreSQL passwords
+- Secure .env file storage
+- Regular data backups
+
+### Network Security
+- Local network operation (no external exposure by default)
+- Optional VPN for enhanced privacy
+- Consider network monitoring
+
+## Development Environment (Optional)
+
+For users wanting to modify the application:
+
+### Additional Tools
+- **Visual Studio Code**: Code editor
+- **Git**: Version control
+- **Node.js debugging tools**
+- **PostgreSQL administration tools**
+
+### Development Dependencies
+- ESLint: Code linting
+- Prettier: Code formatting
+- TypeScript: Type checking
+- Vite dev server: Hot reload
+
+## Troubleshooting Requirements
+
+### Diagnostic Tools
+- Command Prompt access
+- Task Manager for process monitoring
+- Event Viewer for system logs
+- Network diagnostics tools
+
+### Log Files Location
+- Application logs: Console output
+- PostgreSQL logs: PostgreSQL installation directory
+- System logs: Windows Event Viewer
+
+## Backup Requirements
+
+### Data to Backup
+- Database (PostgreSQL dump)
+- .env configuration file
+- Any custom modifications
+- Trading data exports
+
+### Backup Tools
+- Built-in PostgreSQL backup tools
+- Application export functionality
+- File system backup (manual)
+
+## Upgrade Path
+
+### Updating Node.js
+1. Download new version from nodejs.org
+2. Run installer (will update existing installation)
+3. Restart application
+
+### Updating PostgreSQL
+1. Backup database first
+2. Download new version
+3. Follow PostgreSQL upgrade documentation
+4. Test application connectivity
+
+### Updating Application
+1. Backup current installation
+2. Download new version
+3. Copy .env file to new installation
+4. Run setup.bat in new directory
+
+Remember to always backup your data before making any system changes.
